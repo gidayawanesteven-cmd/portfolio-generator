@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Portfolio Information</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <nav class="nav">
+            <a class="brand" href="index.html">PortfolioGen</a>
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="form.html">Create</a>
+                <a href="manage.html">Manage</a>
+            </div>
+        </nav>
+
+        <main class="container">
+            <h1 id="pageTitle">Create Portfolio</h1>
+            <p class="muted">Fields marked * are required.</p>
+            <div id="msg" class="msg" hidden></div>
+
+            <form id="portfolioForm">
+                <section class="card">
+                    <h2>Personal Information</h2>
+                    <div class="row">
+                        <div>
+                            <label for="full_name">Full Name *</label
+                            ><input id="full_name" required />
+                        </div>
+                        <div>
+                            <label for="email">Email *</label
+                            ><input id="email" type="email" required />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div>
+                            <label for="phone">Contact Number</label
+                            ><input id="phone" />
+                        </div>
+                        <div>
+                            <label for="address">Address</label
+                            ><input id="address" />
+                        </div>
+                    </div>
+                    <label for="photo">Profile Picture</label>
+                    <input id="photo" type="file" accept="image/*" />
+                    <img
+                        id="photoPreview"
+                        class="avatar-preview"
+                        alt="Profile preview"
+                        hidden
+                    />
+                    <label for="about">About Me</label>
+                    <textarea id="about" rows="4"></textarea>
+                </section>
+
+                <section class="card">
+                    <h2>Education</h2>
+                    <div id="education"></div>
+                    <button
+                        type="button"
+                        class="btn btn-ghost btn-sm"
+                        data-add="education"
+                    >
+                        + Add education
+                    </button>
+                </section>
+
+                <section class="card">
+                    <h2>Skills</h2>
+                    <label for="skills">Separate with commas</label>
+                    <input id="skills" placeholder="HTML, CSS, JavaScript" />
+                </section>
+
+                <section class="card">
+                    <h2>Projects</h2>
+                    <div id="projects"></div>
+                    <button
+                        type="button"
+                        class="btn btn-ghost btn-sm"
+                        data-add="projects"
+                    >
+                        + Add project
+                    </button>
+                </section>
+
+                <section class="card">
+                    <h2>Work Experience</h2>
+                    <div id="experience"></div>
+                    <button
+                        type="button"
+                        class="btn btn-ghost btn-sm"
+                        data-add="experience"
+                    >
+                        + Add experience
+                    </button>
+                </section>
+
+                <section class="card">
+                    <h2>Social Media / Website Links</h2>
+                    <div id="links"></div>
+                    <button
+                        type="button"
+                        class="btn btn-ghost btn-sm"
+                        data-add="links"
+                    >
+                        + Add link
+                    </button>
+                </section>
+
+                <button
+                    id="saveBtn"
+                    class="btn btn-primary btn-lg"
+                    type="submit"
+                >
+                    Save and Choose Template
+                </button>
+            </form>
+        </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        <script src="js/config.js"></script>
+        <script src="js/db.js"></script>
+        <script src="js/utils.js"></script>
+        <script src="js/form.js"></script>
+    </body>
+</html>

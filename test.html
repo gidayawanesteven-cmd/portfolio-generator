@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>DB Test</title>
+    </head>
+    <body>
+        <h1>Database connection test</h1>
+        <button id="btn">Insert test row</button>
+        <pre id="out">Loading...</pre>
+
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        <script src="js/config.js"></script>
+        <script src="js/db.js"></script>
+        <script>
+            const out = document.getElementById("out");
+            async function show() {
+                try {
+                    out.textContent = JSON.stringify(
+                        await listPortfolios(),
+                        null,
+                        2,
+                    );
+                } catch (e) {
+                    out.textContent = "Error: " + e.message;
+                }
+            }
+            document.getElementById("btn").onclick = async () => {
+                try {
+                    await savePortfolio({
+                        full_name: "Test User",
+                        email: "test@example.com",
+                    });
+                } catch (e) {
+                    alert(e.message);
+                }
+                show();
+            };
+            show();
+        </script>
+    </body>
+</html>
