@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Choose a Template</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/templates.css" />
+    </head>
+    <body>
+        <nav class="nav">
+            <a class="brand" href="index.html">PortfolioGen</a>
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="form.html">Create</a>
+                <a href="manage.html">Manage</a>
+            </div>
+        </nav>
+
+        <main class="container">
+            <h1>Choose a Template</h1>
+            <p class="muted">Preview each one, then select your favorite.</p>
+            <div id="msg" class="msg" hidden></div>
+            <div id="tplGrid" class="tpl-grid"></div>
+        </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        <script src="js/config.js"></script>
+        <script src="js/db.js"></script>
+        <script src="js/utils.js"></script>
+        <script src="js/templates.js"></script>
+    </body>
+</html>
