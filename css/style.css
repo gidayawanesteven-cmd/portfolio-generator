@@ -209,3 +209,45 @@ textarea:focus {
     background: #fee2e2;
     color: #991b1b;
 }
+.page-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.p-list {
+    display: grid;
+    gap: 12px;
+    margin-top: 20px;
+}
+.p-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+}
+.p-card .info {
+    flex: 1;
+    min-width: 200px;
+}
+.thumb-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+.p-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.empty {
+    text-align: center;
+    padding: 48px 16px;
+}
